@@ -8,6 +8,8 @@ import "../styles/index.css";
 //import your own components
 import Home from "./component/home.jsx";
 
+import Restart from "./component/Botones"
+
 let años  = 0;
 let meses = 0;
 let dia   = 0;
@@ -15,11 +17,20 @@ let hora  = 0;
 let min   = 0;
 let seg   = 0;
 
+function reset() {
+
+    años  = 0;       
+    meses = 0;      
+    dia   = 0;        
+    hora  = 0;       
+    min   = 0;        
+    seg   = 0;    
+} 
+
 setInterval(Cambio, 0.1);
 
-
-function Cambio() {
-    ReactDOM.render(<Home seg = {seg} min={min} hora={hora} dia={dia} meses={meses} años={años} />, document.querySelector("#app"));
+function Cambio(num) {
+    ReactDOM.render(<Home seg = {seg} min={min} hora={hora} dia={dia} meses={meses} años={años} reset = {reset} />, document.querySelector("#app"));
     seg ++;
     if (seg > 9) {
         min ++
@@ -43,7 +54,22 @@ function Cambio() {
             }
 
         }
+  
+
+        }
+      
     }
-}
+    
+
+
+        
+    
+
+
+
+
+
+
+
 
 //render your react application
