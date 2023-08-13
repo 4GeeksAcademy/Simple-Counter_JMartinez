@@ -27,7 +27,7 @@ function reset() {
     seg   = 0;    
 } 
 
-setInterval(Cambio, 0.1);
+setInterval(Cambio, 100);
 
 function Cambio(num) {
     ReactDOM.render(<Home seg = {seg} min={min} hora={hora} dia={dia} meses={meses} años={años} reset = {reset} />, document.querySelector("#app"));
